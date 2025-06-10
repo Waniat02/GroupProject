@@ -10,12 +10,12 @@ It allows users to manage.....
 
 # Assignments Used
 
-- Assignment 1: [Name and  what it did)
-- Assignment 2: [Name and what it did)
+- Assignment 1: 
+- Assignment 2: 
 
 
 # Team Members and Responsibilities
 
 - Project Management(create project and share,etc) :  Wania
-- Coders: Jonathan and Mitali
-- Other members: Madhuri , Ayaan, Raiyan.
+- Coders: Jonathan, Madhuri
+- Other members: Mitali , Ayaan, Raiyan.
