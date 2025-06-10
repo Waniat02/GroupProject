@@ -14,4 +14,4 @@ This project is a Java application that....
 
 - Project Management:  Wania
 - Coders: Jonathan, Madhuri
-- Support: Mitali , Ayaan, Raiyan.
+- Support and review members: Mitali , Ayaan, Raiyan.
