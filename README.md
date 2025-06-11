@@ -12,6 +12,6 @@ This project is a Java application that....
 
 # Team Members and Responsibilities
 
-- Project Management:  Wania
-- Coders: Jonathan, Madhuri
-- Support and review members: Mitali , Ayaan, Raiyan.
+- Project Management:  Wania, 
+- Coders: Jonathan, 
+- Support and review members: 
