@@ -7,11 +7,9 @@ For now: GroupProject1
 
 This project is a Java application that....
 
-# Assignments Used
-
 
 # Team Members and Responsibilities
 
-- Project Management:  Wania, 
+- Project Management:  Wania Tajammal 
 - Coders: Jonathan, Mitali
 - Support and review members: Raiyan, Madhuri Kola
