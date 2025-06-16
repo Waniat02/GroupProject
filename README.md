@@ -1,6 +1,6 @@
 # Project Title:
 
-For now: Parking Lot Management System
+Parking Lot Management System
 
 
 # Project Description
