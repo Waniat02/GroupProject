@@ -66,4 +66,15 @@ public class ParkingLot {
         System.out.println("-------------------------\n");
     }
 
+    public void removeVehicle(String licensePlate) throws ParkingException {
+        Vehicle vehicle = parkedVehicles.remove(licensePlate);
+
+        if (vehicle == null)
+            throw new ParkingException("Vehicle does not exist!");
+
+        double fee = vehicle.calculateFee();
+
+        System.out.println(vehicle + " exited. Hours parked: " + vehicle.getHoursParked() + ". Fee: $" + fee);
+    }
+
 }

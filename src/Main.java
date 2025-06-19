@@ -38,6 +38,7 @@ public class Main {
                         System.out.println("Enter License Plate: ");
                         String licensePlate = scanner.nextLine();
 
+                        lot.removeVehicle(licensePlate);
                     }
 
                     case 3 -> {
