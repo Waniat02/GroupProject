@@ -5,6 +5,7 @@ import Vehicles.Car;
 import Vehicles.Motorcycle;
 import Vehicles.Vehicle;
 
+import java.time.Duration;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -47,6 +48,22 @@ public class ParkingLot {
 
         }
 
+    }
+
+    public void showStatus() {
+        System.out.println("\n-- Parking Lot Status --");
+        System.out.println("Capacity: " + capacity);
+        System.out.println("Occupied: " + parkedVehicles.size());
+
+        for (Vehicle v : parkedVehicles.values()) {
+            Duration duration = Duration.between(v.getEntryTime(), java.time.LocalDateTime.now());
+            long hours = duration.toHours();
+            long minutes = duration.toMinutes() % 60;
+
+            System.out.println(v + " | Parked for: " + hours + "h " + minutes + "m");
+        }
+
+        System.out.println("-------------------------\n");
     }
 
 }

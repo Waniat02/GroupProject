@@ -7,7 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        ParkingLot lot = new ParkingLot(5);
+        ParkingLot lot = new ParkingLot(3);
 
         while(true) {
             System.out.println("1. Add Vehicle");
@@ -42,6 +42,7 @@ public class Main {
 
                     case 3 -> {
                         // Check status
+                        lot.showStatus();
                     }
 
                     case 4 -> {
