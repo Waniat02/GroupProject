@@ -1,4 +1,5 @@
 import Parking.Exception.ParkingException;
+import Parking.ParkingLot;
 
 import java.util.Scanner;
 
@@ -6,6 +7,7 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
+        ParkingLot lot = new ParkingLot(5);
 
         while(true) {
             System.out.println("1. Add Vehicle");
@@ -28,7 +30,7 @@ public class Main {
                         System.out.println("Enter State ( for example: NY, MD, VA ): ");
                         String state = scanner.nextLine();
 
-
+                        lot.addVehicle(type, licensePlate, state);
                     }
 
                     case 2 -> {
