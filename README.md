@@ -20,5 +20,5 @@ Users will be able to:
 # Team Members and Responsibilities
 
 - Project Management:  Wania Tajammal 
-- Coders: Jonathan, Mitali
-- Support and review members: Raiyan, Madhuri Kola
+- Coders: Jonathan, Madhuri kola
+- Support and review members: Raiyan, Mitali, Ayaan
