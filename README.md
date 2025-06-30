@@ -22,3 +22,7 @@ Users will be able to:
 - Project Management:  Wania Tajammal 
 - Coders: Jonathan, Madhuri kola
 - Support and review members: Raiyan, Mitali, Ayaan
+
+# The Use Of JavaDocs
+
+We used JavaDocs in this project to explain what each class and method does. This helps other people and our team understand the code better.The generated documentation provides a clear structure of the project and can be accessed online through GitHub Pages.
