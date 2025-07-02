@@ -74,4 +74,3 @@ class ParkingLotManager {
         parkedVehicles.values().forEach(v ->
                 System.out.println("Plate: " + v.getLicensePlate() + ", Type: " + v.getVehicleType()));
     }
-}
