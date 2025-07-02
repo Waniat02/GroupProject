@@ -133,4 +133,49 @@ public class ParkingLot {
         System.out.println(vehicle + " exited. Hours parked: " + vehicle.getHoursParked() + ". Fee: $" + fee);
     }
 
+    /**
+     * Gets the number of currently occupied parking spaces.
+     * 
+     * @return the number of vehicles currently parked in the lot
+     */
+    public int getOccupiedSpaces() {
+        return parkedVehicles.size();
+    }
+
+    /**
+     * Gets the total capacity of the parking lot.
+     * 
+     * @return the maximum number of vehicles that can be parked
+     */
+    public int getCapacity() {
+        return capacity;
+    }
+
+    /**
+     * Checks if the parking lot is at full capacity.
+     * 
+     * @return true if the parking lot is full, false otherwise
+     */
+    public boolean isFull() {
+        return parkedVehicles.size() >= capacity;
+    }
+
+    /**
+     * Checks if the parking lot is empty.
+     * 
+     * @return true if no vehicles are parked, false otherwise
+     */
+    public boolean isEmpty() {
+        return parkedVehicles.isEmpty();
+    }
+
+    /**
+     * Gets the number of available parking spaces.
+     * 
+     * @return the number of empty parking spaces
+     */
+    public int getAvailableSpaces() {
+        return capacity - parkedVehicles.size();
+    }
+
 }
