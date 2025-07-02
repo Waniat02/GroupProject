@@ -35,7 +35,7 @@ class Vehicle<T> {
 /**
  * Class representing a generic parking lot with a fixed capacity.
  */
-public class ParkingLotManager {
+class ParkingLotManager {
     private final int capacity;
     private final Map<String, Vehicle<String>> parkedVehicles;
 
@@ -73,14 +73,5 @@ public class ParkingLotManager {
         System.out.println("Vehicles Parked: " + parkedVehicles.size() + "/" + capacity);
         parkedVehicles.values().forEach(v ->
                 System.out.println("Plate: " + v.getLicensePlate() + ", Type: " + v.getVehicleType()));
-    }
-
-    public static void main(String[] args) {
-        ParkingLotManager lot = new ParkingLotManager(2);
-        lot.addVehicle("XYZ123", "Car");
-        lot.addVehicle("LMN456", "Truck");
-        lot.displayStatus();
-        lot.removeVehicle("XYZ123");
-        lot.displayStatus();
     }
 }
