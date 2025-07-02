@@ -125,6 +125,11 @@ public class Main {
                         }
                         
                         System.out.println("Currently parked vehicles: " + lot.getOccupiedSpaces());
+                        
+                        // Show list of parked vehicles (license plate and state only)
+                        System.out.println("\n--- Parked Vehicles ---");
+                        lot.listVehicles();
+                        
                         System.out.print("Enter License Plate: ");
                         String licensePlate = scanner.nextLine().trim();
                         

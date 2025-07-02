@@ -178,4 +178,26 @@ public class ParkingLot {
         return capacity - parkedVehicles.size();
     }
 
+    /**
+     * Lists all parked vehicles showing license plate, state, and vehicle type.
+     * 
+     * This method provides a concise list of vehicles for selection purposes,
+     * showing the essential information needed to identify vehicles including
+     * their type (Car or Motorcycle).
+     */
+    public void listVehicles() {
+        if (parkedVehicles.isEmpty()) {
+            System.out.println("No vehicles currently parked.");
+            return;
+        }
+        
+        int count = 1;
+        for (Vehicle vehicle : parkedVehicles.values()) {
+            System.out.println(count + ". " + vehicle.getClass().getSimpleName() + 
+                             " | License Plate: " + vehicle.getLicensePlate() + 
+                             " | State: " + vehicle.getState());
+            count++;
+        }
+    }
+
 }
