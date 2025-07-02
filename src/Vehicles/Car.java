@@ -11,7 +11,7 @@ package Vehicles;
  * @version 1.0
  * @since 2025
  */
-public class Car extends Vehicle {
+public class Car extends Vehicle<String> {
     
     /**
      * Constructs a new Car with the specified license plate and state.
@@ -21,6 +21,17 @@ public class Car extends Vehicle {
      */
     public Car(String licensePlate, String state) {
         super(licensePlate, state);
+    }
+
+    /**
+     * Constructs a new Car with the specified license plate, state, and car type.
+     * 
+     * @param licensePlate the car's license plate number
+     * @param state the state where the car is registered
+     * @param carType the specific type of car (e.g., "Sedan", "SUV", "Sports")
+     */
+    public Car(String licensePlate, String state, String carType) {
+        super(licensePlate, state, carType);
     }
 
     /**

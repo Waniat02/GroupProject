@@ -13,11 +13,15 @@ import java.time.LocalDateTime;
  * fee calculation. It implements the Billable interface to support parking
  * fee calculations based on hourly rates and parking duration.
  * 
+ * The class uses generics to allow for different vehicle characteristics
+ * or categories to be specified at runtime.
+ * 
+ * @param <T> the type representing vehicle characteristics or category
  * @author Group Project Team
  * @version 1.0
  * @since 2025
  */
-public abstract class Vehicle implements Billable {
+public abstract class Vehicle<T> implements Billable {
 
     /** The vehicle's license plate number */
     private String licensePlate;
@@ -27,6 +31,9 @@ public abstract class Vehicle implements Billable {
     
     /** The timestamp when the vehicle entered the parking lot */
     private LocalDateTime entryTime;
+    
+    /** The vehicle's characteristics or category */
+    private T vehicleType;
 
     /**
      * Constructs a new Vehicle with the specified license plate and state.
@@ -38,6 +45,20 @@ public abstract class Vehicle implements Billable {
         this.licensePlate = licensePlate;
         this.state = state;
         this.entryTime = LocalDateTime.now();
+    }
+
+    /**
+     * Constructs a new Vehicle with the specified license plate, state, and vehicle type.
+     * 
+     * @param licensePlate the vehicle's license plate number
+     * @param state the state where the vehicle is registered
+     * @param vehicleType the vehicle's characteristics or category
+     */
+    public Vehicle(String licensePlate, String state, T vehicleType) {
+        this.licensePlate = licensePlate;
+        this.state = state;
+        this.entryTime = LocalDateTime.now();
+        this.vehicleType = vehicleType;
     }
 
     /**
@@ -65,6 +86,24 @@ public abstract class Vehicle implements Billable {
      */
     public LocalDateTime getEntryTime() {
         return entryTime;
+    }
+
+    /**
+     * Gets the vehicle's characteristics or category.
+     * 
+     * @return the vehicle type as T
+     */
+    public T getVehicleType() {
+        return vehicleType;
+    }
+
+    /**
+     * Sets the vehicle's characteristics or category.
+     * 
+     * @param vehicleType the vehicle type to set
+     */
+    public void setVehicleType(T vehicleType) {
+        this.vehicleType = vehicleType;
     }
 
     /**
@@ -105,13 +144,21 @@ public abstract class Vehicle implements Billable {
     /**
      * Returns a string representation of the vehicle.
      * 
-     * The string includes the vehicle type, license plate, state, and entry time.
+     * The string includes the vehicle type, license plate, state, entry time,
+     * and vehicle characteristics if available.
      * 
      * @return a string representation of the vehicle
      */
     @Override
     public String toString() {
-        return this.getClass().getSimpleName() + " [licensePlate=" + licensePlate + ", state=" + state + ", entryTime=" + entryTime + "]";
+        String baseInfo = this.getClass().getSimpleName() + " [licensePlate=" + licensePlate + 
+                         ", state=" + state + ", entryTime=" + entryTime;
+        
+        if (vehicleType != null) {
+            return baseInfo + ", vehicleType=" + vehicleType + "]";
+        } else {
+            return baseInfo + "]";
+        }
     }
 
 }

@@ -26,7 +26,7 @@ public class ParkingLot {
     private int capacity;
     
     /** Map of currently parked vehicles, keyed by license plate */
-    private Map<String, Vehicle> parkedVehicles;
+    private Map<String, Vehicle<?>> parkedVehicles;
 
     /**
      * Constructs a new ParkingLot with the specified capacity.
@@ -48,7 +48,7 @@ public class ParkingLot {
      * @param vehicle the vehicle to add to the parking lot
      * @throws ParkingException if the parking lot is at capacity or the vehicle is already parked
      */
-    public void addVehicle(Vehicle vehicle) throws ParkingException {
+    public void addVehicle(Vehicle<?> vehicle) throws ParkingException {
         if (parkedVehicles.size() >= capacity) {
             throw new ParkingException("Capacity exceeded!");
         }
@@ -101,7 +101,7 @@ public class ParkingLot {
         System.out.println("Capacity: " + capacity);
         System.out.println("Occupied: " + parkedVehicles.size());
 
-        for (Vehicle v : parkedVehicles.values()) {
+        for (Vehicle<?> v : parkedVehicles.values()) {
             Duration duration = Duration.between(v.getEntryTime(), java.time.LocalDateTime.now());
             long hours = duration.toHours();
             long minutes = duration.toMinutes() % 60;
@@ -123,7 +123,7 @@ public class ParkingLot {
      * @throws ParkingException if the vehicle is not found in the parking lot
      */
     public void removeVehicle(String licensePlate) throws ParkingException {
-        Vehicle vehicle = parkedVehicles.remove(licensePlate);
+        Vehicle<?> vehicle = parkedVehicles.remove(licensePlate);
 
         if (vehicle == null)
             throw new ParkingException("Vehicle does not exist!");
@@ -192,7 +192,7 @@ public class ParkingLot {
         }
         
         int count = 1;
-        for (Vehicle vehicle : parkedVehicles.values()) {
+        for (Vehicle<?> vehicle : parkedVehicles.values()) {
             System.out.println(count + ". " + vehicle.getClass().getSimpleName() + 
                              " | License Plate: " + vehicle.getLicensePlate() + 
                              " | State: " + vehicle.getState());
